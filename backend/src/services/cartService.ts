@@ -24,7 +24,6 @@ const normalizeAndRecalc = () => {
 
   const consolidated = Array.from(byId.values()).filter((i) => i.qty > 0);
 
-
   const enriched = consolidated.map((it) => {
     const product = (products as any[]).find((pr) => pr.id === it.productId);
     if (!product) return it;
