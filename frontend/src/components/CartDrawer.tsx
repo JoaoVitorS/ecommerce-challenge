@@ -132,15 +132,17 @@ export default function CartDrawer() {
           ))}
         </div>
 
-        <div className="mt-6 flex justify-between border-t pt-4 text-sm">
-          <span className="text-gray-800 font-bold text-lg">Total:</span>
-          <span className="font-semibold text-gray-700">
-            {(cart?.subTotal ?? 0).toLocaleString("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            })}
-          </span>
-        </div>
+        {cart.items.length !== 0 && (
+          <div className="mt-6 flex justify-between border-t pt-4 text-sm">
+            <span className="text-gray-800 font-bold text-lg">Total:</span>
+            <span className="font-semibold text-gray-700">
+              {(cart?.subTotal ?? 0).toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </span>
+          </div>
+        )}
       </aside>
     </>
   );
