@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { apiGet, apiPost } from "@/lib/api";
 import type { Cart } from "@/lib/types";
+import { X, ShoppingBasket } from "lucide-react";
 
 export default function CartDrawer() {
   const [open, setOpen] = useState(false);
@@ -52,25 +53,28 @@ export default function CartDrawer() {
     <>
       <div
         onClick={() => setOpen(false)}
-        className={`fixed inset-0 bg-black/40 transition-opacity ${
-          open ? "opacity-100" : "opacity-0 pointer-events-none"
+        className={`fixed inset-x-0 top-16 bottom-0 z-40 bg-black/40 transition-opacity ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       />
-      <aside
-        className={`fixed right-0 top-0 h-full w-full max-w-sm bg-[#f9fafb] p-4 shadow-2xl transition-transform ${
-          open ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
+     <aside
+        className={`fixed right-0 top-16 z-50 w-full max-w-sm
+          h-[calc(100dvh-4rem)] bg-[#f9fafb] p-4 shadow-2xl
+          transition-transform ${open ? "translate-x-0" : "translate-x-full"}`}
+        >
         <header className="flex items-center justify-between border-b pb-2">
-          <h2 className="text-lg font-semibold">Seu carrinho</h2>
+          <h2 className="text-lg font-semibold text-gray-900">Carrinho</h2>
           <button onClick={() => setOpen(false)} className="text-sm text-gray-600">
-            Fechar
+            <X className="h-5 w-5 text-gray-700" aria-placeholder="Icone para fechar"/>
           </button>
         </header>
 
         <div className="mt-4 space-y-3 overflow-auto pr-1">
           {cart.items.length === 0 && (
-            <p className="text-sm text-gray-500">Seu carrinho está vazio.</p>
+            <div className="flex flex-col justify-center items-center h-50rem">
+              <p className="text-sm text-gray-500">Seu carrinho está vazio.</p>
+              <ShoppingBasket className="h-10 w-10 text-gray-700 mt-5" aria-placeholder="Carrinho de Compras"/>
+            </div>
           )}
 
           {cart.items.map((it) => (
