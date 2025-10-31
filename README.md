@@ -1,144 +1,170 @@
-```markdown
-# 🌐 Ecommerce Challenge Stefanini 🚀
+# 🌐 Ecommerce Challenge — Stefanini 🚀
 
-A full-stack e-commerce platform built with TypeScript, React, and Node.js.
+Aplicação **full-stack** desenvolvida como parte do desafio técnico **Stefanini - E-commerce**.  
+O projeto é composto por dois módulos principais:
 
-Streamlining online shopping with a modern and efficient experience.
+- 🧩 **Backend:** API REST em **Node.js + Express + TypeScript**
+- 💻 **Frontend:** Aplicação web em **Next.js + TypeScript + Tailwind CSS**
 
-## About
+O objetivo é simular uma plataforma moderna de e-commerce, permitindo listar produtos, visualizar detalhes e gerenciar um carrinho de compras com subtotal dinâmico.
 
-The Ecommerce Challenge project is a full-stack web application designed to simulate an online shopping experience. Built using TypeScript, React, and Node.js, it aims to provide a robust and scalable platform for users to browse products, add them to a cart, and simulate complete a purchase. This project serves as a practical demonstration of modern web development techniques and best practices.
+---
 
-The primary goal of this project is to provide a functional and well-structured e-commerce platform that can be used as a learning resource or a starting point for more complex e-commerce solutions.
+## 🧩 Sobre o projeto
 
-Key technologies used include TypeScript for type safety and improved code quality, React for building a dynamic and responsive user interface, and Node.js with Express for creating a RESTful API. The project leverages modern development tools and practices, such as ESLint for linting, Prettier for code formatting, and Git for version control. Its unique selling point lies in its comprehensive approach, covering all aspects of an e-commerce application, from product listing to order management.
+O **Ecommerce Challenge Stefanini** é uma aplicação completa (frontend + backend) desenvolvida em **TypeScript** com o propósito de demonstrar práticas modernas de arquitetura, separação de responsabilidades e consumo de API REST.
 
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A aplicação oferece:
+- Listagem de produtos com paginação.
+- Página de detalhes do produto.
+- Carrinho funcional (adicionar, remover, atualizar quantidades).
+- Cálculo de subtotal e preço promocional no backend.
+- Interface responsiva e clean feita com **Tailwind CSS**.
 
-### Prerequisites
+---
 
-- Node.js 18+ and npm
-- Git
-- Next
+## ⚙️ Pré-requisitos
 
-### Option 1: From Source
+Antes de iniciar, verifique se você possui instalado:
+
+- **Node.js** (versão 18 ou superior)
+- **npm** (ou yarn/pnpm)
+- **Git**
+
+---
+
+## ▶️ Como rodar o projeto localmente
+
+> É recomendado usar **dois terminais** — um para o backend e outro para o frontend.
+
+### 1️⃣ Clonar o repositório
 
 ```bash
-# Clone repository
 git clone https://github.com/JoaoVitorS/ecommerce-challenge.git
 cd ecommerce-challenge
 
-cd /backend
-# Install dependencies
-npm install
 
-# Start development server
+### 2️⃣ Rodar o Backend
+cd backend
+npm install
 npm run dev
 
-cd /frontend
-# Install dependencies
+O servidor será iniciado em:
+👉 http://localhost:4000
+
+### 3️⃣ Rodar o Frontend
+
+cd frontend
 npm install
-
-# Start development server
 npm run dev
+
+A aplicação estará disponível em:
+👉 http://localhost:3000
 ```
 
+## 🔗 Endpoints principais (Backend)
 
-## 💻 Usage
+| Método | Rota                | Descrição                                        |
+|--------|---------------------|--------------------------------------------------|
+| GET    | `/api/products`     | Lista todos os produtos disponíveis              |
+| GET    | `/api/products/:id` | Retorna detalhes de um produto específico        |
+| GET    | `/api/cart`         | Retorna o carrinho (itens, totais e subtotal)    |
+| POST   | `/api/cart/add`     | Adiciona ou remove itens do carrinho `{ productId, qty }` |
 
-### Basic Usage
+> 💡 Para remover completamente um produto, envie `qty` negativo igual à quantidade atual.
 
-```javascript
-// Example usage of a product service
-const productService = require('./src/services/productService');
+## 💻 Páginas (Frontend)
 
-// Get all products
-productService.getAllProducts()
-  .then(products => console.log(products))
-  .catch(error => console.error(error));
-```
+| Página     | Rota             | Descrição                                                        |
+|-------------|------------------|------------------------------------------------------------------|
+| 🏠 **Home**     | `/`              | Lista todos os produtos com paginação simples                    |
+| 🛍️ **Produto**  | `/product/:id`   | Mostra detalhes do produto e botão “Adicionar ao carrinho”      |
+| 🧺 **Carrinho** | Drawer lateral   | Abre pelo ícone na navbar, permitindo adicionar, remover e ver subtotal |
 
-### Advanced Examples
 
-```javascript
-// Example of adding a product to the cart
-const cartService = require('./src/services/cartService');
-
-cartService.addProductToCart(userId, productId, quantity)
-  .then(cart => console.log('Product added to cart:', cart))
-  .catch(error => console.error('Error adding product to cart:', error));
-```
-
-## ⚙️ Configuration
-
-### Configuration File
-
-```json
-{
-  "name": "ecommerce-config",
-  "version": "1.0.0",
-  "settings": {
-    "theme": "light",
-    "language": "en",
-    "currency": "USD"
-  }
-}
-```
-
-## API Reference
-
-### Products API
-
-- `GET /api/products`: Get all products
-  - Response:
-    ```json
-    [
-      {
-        "id": "1",
-        "name": "Product 1",
-        "description": "Description of product 1",
-        "price": 29.99
-      },
-      {
-        "id": "2",
-        "name": "Product 2",
-        "description": "Description of product 2",
-        "price": 49.99
-      }
-    ]
-    ```
-
-- `GET /api/products/:id`: Get a specific product by ID
-  - Response:
-    ```json
-    {
-      "id": "1",
-      "name": "Product 1",
-      "description": "Description of product 1",
-      "price": 29.99
-    }
-    ```
-
-## 📁 Project Structure
+## 🗂️ Estrutura do projeto
 
 ```
 ecommerce-challenge/
-├── 📁 src/
-│   ├── 📁 components/          # Reusable UI components
-│   ├── 📁 pages/              # Application pages
-│   ├── 📁 services/           # API services
-│   ├── 📁 utils/              # Utility functions
-│   ├── 📁 styles/             # CSS/styling files
-│   ├── 📁 models/             # Data models
-│   ├── 📁 controllers/        # API controllers
-│   ├── 📁 routes/             # API routes
-│   └── 📄 index.tsx           # Application entry point
-├── 📁 public/                 # Static assets
-├── 📁 tests/                  # Test files
-├── 📁 docs/                   # Documentation
-├── 📄 .env.example           # Environment variables template
-├── 📄 .gitignore             # Git ignore rules
-├── 📄 package.json           # Project dependencies
-├── 📄 README.md              # Project documentation
-└── 📄 LICENSE                # License file
+├── backend/
+│   ├── package.json
+│   └── src/
+│       ├── controllers/        # cartController.ts, productsController.ts
+│       ├── routes/             # cart.ts, products.ts
+│       ├── services/           # cartService.ts
+│       ├── data/               # products.json (mock)
+│       ├── utils/              # pricing.ts (effectivePrice, etc.)
+│       ├── types.ts            # Tipos do backend
+│       └── server.ts           # Bootstrap do Express
+│
+└── frontend/
+    ├── package.json
+    └── src/
+        ├── app/                # Next.js App Router (layout.tsx, page.tsx, product/[id]/page.tsx)
+        ├── components/         # Navbar.tsx, CartDrawer.tsx, ProductCard.tsx, etc.
+        ├── lib/                # api.ts (apiGet/apiPost), types.ts
+        ├── styles/             # globals.css, Tailwind config (se aplicável)
+        └── types/              # (opcional) Tipos compartilhados do front
+
 ```
+
+## 🧰 Tecnologias utilizadas
+
+### Backend
+
+Node.js
+
+Express
+
+TypeScript
+
+### Frontend
+
+Next.js (App Router)
+
+React
+
+TypeScript
+
+Tailwind CSS
+
+Lucide React (ícones)
+
+
+## 🧠 Observações importantes
+
+O frontend consome o backend através de /api/*, usando rewrite configurado no next.config.js.
+
+O subtotal e lineTotal dos produtos são calculados diretamente no backend (CartService).
+
+O carrinho é mantido em memória (mock) apenas para fins de demonstração.
+
+O projeto segue uma arquitetura modular, separando rotas, controllers e services.
+
+Em caso de erro de hydration no Next, evite lógica com window, document, Date ou Math.random() no SSR.
+
+
+### Listar produtos
+curl http://localhost:4000/api/products
+
+### Buscar produto específico
+curl http://localhost:4000/api/products/1
+
+### Ver carrinho
+curl http://localhost:4000/api/cart
+
+### Adicionar produto ao carrinho
+curl -X POST http://localhost:4000/api/cart/add \
+  -H "Content-Type: application/json" \
+  -d '{"productId": "1", "qty": 2}'
+
+
+### 👨‍💻 Autor
+
+João Vitor Soares Silva - Desenvolvedor Fullstack
+
+Desafio Técnico — Stefanini 2025
+
+📧 joaovitorssilva7@gmail.com
+
+
