@@ -4,7 +4,7 @@
     "name": "Headset Gamer Pro",
     "price": 399.9,
     "promoPrice": 299.9,
-    "imageUrl": "https://picsum.photos/seed/headset/600/400",
+    "imageUrl": "/assets/headset-gamer.jpg",
     "description": "Headset com áudio 7.1, microfone removível e conforto prolongado."
   },
   {
@@ -12,7 +12,7 @@
     "name": "Teclado Mecânico RGB",
     "price": 499.9,
     "promoPrice": null,
-    "imageUrl": "https://picsum.photos/seed/headset/600/400",
+    "imageUrl": "/assets/teclado-rgb.jpg",
     "description": "Switches azuis, construção em alumínio e iluminação configurável."
   },
   {
@@ -20,7 +20,7 @@
     "name": "Headset Gamer Havit H2002d",
     "price": 179.99,
     "promoPrice": 159.90,
-    "imageUrl": "https://picsum.photos/seed/headset/600/400",
+    "imageUrl": "/assets/headset-havit.jpg",
     "description": "Headset com drivers de 40 mm, microfone com cancelamento e compatível com múltiplas plataformas."
   },
   {
@@ -28,7 +28,7 @@
     "name": "Teclado Mecânico Gamer TGT Sherman Rainbow ABNT2",
     "price": 84.99,
     "promoPrice": null,
-    "imageUrl": "https://picsum.photos/seed/headset/600/400",
+    "imageUrl": "/assets/teclado-mecanico.jpg",
     "description": "Teclado compacto com switch azul, iluminação rainbow e layout brasileiro (ABNT2)."
   },
   {
@@ -36,7 +36,7 @@
     "name": "Headset Gamer Mancer Twilight RGB",
     "price": 69.50,
     "promoPrice": 49.99,
-    "imageUrl": "https://picsum.photos/seed/headset/600/400",
+    "imageUrl": "/assets/headset-2.jpg",
     "description": "Drivers grandes de 50 mm, iluminação RGB, microfone retrátil e ótimo custo-benefício."
   },
   {
@@ -44,7 +44,7 @@
     "name": "Teclado Mecânico Gamer Husky Anchorage HTG200",
     "price": 209.90,
     "promoPrice": null,
-    "imageUrl": "https://picsum.photos/seed/headset/600/400",
+    "imageUrl": "/assets/teclado-3.jpg",
     "description": "Full-size com switches mecânicos Outemu, estrutura metálica e iluminação RGB dinâmica."
   },
   {
@@ -52,7 +52,7 @@
     "name": "Mouse Gamer HyperX Pulsefire Haste 2",
     "price": 162.38,
     "promoPrice": null,
-    "imageUrl": "https://picsum.photos/seed/headset/600/400",
+    "imageUrl": "/assets/mouse-hyperx.jpg",
     "description": "Mouse ultraleve de 85 g, sensor óptico de alta performance e iluminação RGB LIGHTSYNC."
   },
   {
@@ -60,7 +60,7 @@
     "name": "Cadeira Gamer TGT Heron TC",
     "price": 419.99,
     "promoPrice": null,
-    "imageUrl": "https://picsum.photos/seed/headset/600/400",
+    "imageUrl": "/assets/cadeira-gamer.jpg",
     "description": "Assento ergonômico com espuma moldada, encosto reclinável e apoios ajustáveis – design gamer premium."
   },
   {
@@ -68,7 +68,7 @@
     "name": "Mouse Gamer Redragon Hana RGB",
     "price": 114.99,
     "promoPrice": 89.90,
-    "imageUrl": "https://picsum.photos/seed/headset/600/400",
+    "imageUrl": "/assets/mouse-redragon.jpg",
     "description": "Mouse ambidestro com iluminação RGB, sensor de até 10.000 DPI e excelente para jogos competitivos."
   }
 ]
