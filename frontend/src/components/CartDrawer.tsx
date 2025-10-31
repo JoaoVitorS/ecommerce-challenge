@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { apiGet, apiPost } from "@/lib/api";
 import type { Cart } from "@/lib/types";
@@ -81,7 +82,9 @@ export default function CartDrawer() {
             <div key={it.productId} className="rounded border bg-white p-2">
               <div className="flex items-start gap-3">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
+                  width={600}
+                  height={400}
                   src={it.imageUrl}
                   alt={it.name}
                   className="h-12 w-12 rounded object-cover"
@@ -130,8 +133,8 @@ export default function CartDrawer() {
         </div>
 
         <div className="mt-6 flex justify-between border-t pt-4 text-sm">
-          <span>Subtotal:</span>
-          <span className="font-semibold">
+          <span className="text-gray-800 font-bold text-lg">Total:</span>
+          <span className="font-semibold text-gray-700">
             {(cart?.subTotal ?? 0).toLocaleString("pt-BR", {
               style: "currency",
               currency: "BRL",

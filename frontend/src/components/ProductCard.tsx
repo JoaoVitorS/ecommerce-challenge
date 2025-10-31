@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Product } from "@/lib/types";
 
 export default function ProductCard({ product }: { product: Product }) {
@@ -13,7 +14,9 @@ export default function ProductCard({ product }: { product: Product }) {
     >
 
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
+        height={400}
+        width={600}
         src={product.imageUrl}
         alt={product.name}
         className="aspect-[4/3] w-full object-cover transition group-hover:scale-[1.02]"

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Info } from "lucide-react";
 import { apiGet } from "@/lib/api";
 import type { Product } from "@/lib/types";
@@ -14,7 +15,9 @@ export default async function ProductPage({ params }: Props) {
     <main className="mx-auto max-w-5xl p-6">
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+         <Image
+          width={600}
+          height={400}
           src={product.imageUrl}
           alt={product.name}
           className="w-full rounded-lg border object-cover shadow-sm"
