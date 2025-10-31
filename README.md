@@ -28,11 +28,19 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 git clone https://github.com/JoaoVitorS/ecommerce-challenge.git
 cd ecommerce-challenge
 
+cd /backend
 # Install dependencies
 npm install
 
 # Start development server
-npm run start
+npm run dev
+
+cd /frontend
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
 
