@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import path from "path";
 import productsRoutes from "./routes/products";
 import cartRoutes from "./routes/cart";
 import "dotenv/config"
@@ -12,6 +13,10 @@ app.get("/", (_req, res) => res.json({ ok: true }));
 
 app.use("/api/products", productsRoutes);
 app.use("/api/cart", cartRoutes);
+
+app.use(cors({ origin: "http://localhost:3000" }));
+
+app.use("/assets", express.static(path.resolve(__dirname, "assets")));
 
 app.use((_req, res) => res.status(404).json({ message: "Not found" }));
 
